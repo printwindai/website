@@ -11,6 +11,10 @@ import {
 import Home from './pages/home';
 import About from './pages/about';
 import Blog from './pages/blog';
+import Contact from './pages/contactsales';
+// import Support from './pages/support';
+// import Investors from './pages/investors';
+// import Careers from './pages/careers';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +33,10 @@ const router = createBrowserRouter([
     path: "/Blog",
     element: <Blog />,
   },
+  {
+    path: "/Contact",
+    element: <Contact />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
