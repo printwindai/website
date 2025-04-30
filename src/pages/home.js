@@ -1,50 +1,52 @@
-import React, { useState, useEffect } from 'react';
+// src/pages/home.js
+import React from 'react';
 import Navbar from '../components/Navbar';
-import '../App.css'; // Use App.css for styling
+import '../App.css';
 
 function Home() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    'Latest Project',
-    'Case Study',
-    'Our Goals',
-    'UK Gov Alignment',
-    'International Development',
-    'Ethics Statement',
+  const sections = [
+    {
+      title: 'Tower Crawler',
+      description: 'Discover how PrintWindAI is revolutionizing wind farm placement using a simple and sophisticated 3D printing crawler that can be deployed in all terrain',
+      image: '/images/project.jpg'
+    },
+    {
+      title: 'Lower Costs and Higher Efficiency',
+      description: 'Our solution leads to a 30% reduction in cost and significantly increases the efficiency of Printing leading to rapid build times with lower cost.',
+      image: '/images/case-study.jpg'
+    },
+    {
+      title: 'Our Goals',
+      description: 'We aim to revolutionise the  Wind Turbine Industry with out innovative solutions allowing for rapid deployment and lower costs. The minimalist design allows for esier transportation and the possibility of accessing more inaccessible areas of high wind speed.',
+      image: '/images/goals.jpg'
+    },
+    {
+      title: 'UK Net Zero Strategy',
+      description: 'PrintWindAI is aligned with the UK’s 2050 Net-Zero strategy, contributing to national climate goals.',
+      image: '/images/uk-gov.jpg'
+    },
+    {
+      title: 'AI Integrated Software',
+      description: 'Our AI Software is integrated with the crawler setup and design, allowing for real-time data analysis and machine learning additionally the computer vision software allows live tracking of its surroundings',
+      image: '/images/international.jpg'
+    }
   ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds (adjust as needed)
-
-    return () => clearInterval(interval); // Clean up the interval on unmount
-  }, [slides.length]);
 
   return (
     <div className="home-container">
       <Navbar />
       <div className="content-container">
-        <div className="header-section">
-\
-          <h2 className="header-subtitle">Build where it blows!</h2>
-          <p className="news-feed-title">News feed...</p>
-        </div>
-
-        <div className="slide-section">
-          <div className="slide-content">
-            {slides[currentSlide]}
-          </div>
-        </div>
-
-        <div className="tiles">
-          <div className="tile">Working With Us</div>
-          <div className="tile">Case Studies</div>
-          <div className="tile">Our Goals</div>
-          <div className="tile">UK Gov Alignment</div>
-          <div className="tile">International Development</div>
-          <div className="tile">Statement of Ethics</div>
-        </div>
+        {sections.map((section, index) => (
+          <section key={index} className={`info-section ${index % 2 === 0 ? 'bg-light' : 'bg-dark'}`}>
+            <div className="info-text">
+              <h2>{section.title}</h2>
+              <p>{section.description}</p>
+            </div>
+            <div className="info-image">
+              <img src={section.image} alt={section.title} />
+            </div>
+          </section>
+        ))}
       </div>
     </div>
   );

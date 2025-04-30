@@ -12,18 +12,20 @@ import Home from './pages/home';
 import About from './pages/about';
 import Blog from './pages/blog';
 import Contact from './pages/contactsales';
+import Product from './pages/product';
 // import Support from './pages/support';
 // import Investors from './pages/investors';
-// import Careers from './pages/careers';
+import Careers from './pages/careers';
 
 const router = createBrowserRouter([
+
   {
-    path: "",
-    element: <App />,
+    path: "/",
+    element: <Home />,
   },
   {
-    path: "/Home",
-    element: <Home />,
+    path:"/Product",
+    element: <Product />,
   },
   {
     path: "/About",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/Contact",
     element: <Contact />,
+  },
+  {
+    path: "/Careers",
+    element: <Careers />,
   }
 ]);
 

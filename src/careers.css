@@ -1,0 +1,32 @@
+/* src/pages/careers.css */
+
+.careers-page {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  
+  .careers-header {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .careers-header h1 {
+    font-size: 2.5em;
+    color: #004d40;
+    margin-bottom: 20px;
+  }
+  
+  .careers-header p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
