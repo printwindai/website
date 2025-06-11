@@ -8,25 +8,25 @@ const teamMembers = [
     name: 'Paul Marshall',
     role: 'CEO & Co-Founder',
     image: '/images/paul.png',
-    description: 'Passionate about innovation and leadership.'
+    description: 'Leading the company vision and strategy, with a focus on innovation in wind turbine construction.'
   },
   {
     name: 'Joe Wills',
     role: 'Director of Engineering and Co-Founder',
     image: '/images/joe.png',
-    description: 'Expert in technology and problem-solving.'
+    description: 'Design and development of crawler motion'
   },
   {
     name: 'Srikant Santosh',
     role: 'CTO and Co-Founder',
     image: '/images/srik.png',
-    description: 'Leading operations and business development.'
+    description: 'Software Integration and business development.'
   },
   {
     name: 'Dr Peter Mundy',
     role: 'COO and Co-Founder',
     image: '/images/pete.png',
-    description: 'Leading operations and business development.'
+    description: 'Leading operations and ensuring efficient project execution.'
   }
 ];;
 

@@ -7,9 +7,9 @@ import '../blog.css';
 function Blog() {
   const blogPosts = [
     {
-      title: 'Revolutionizing Wind Farm Inspections',
-      summary: 'Learn how PrintWindAI is using robotics and AI to transform traditional wind tower inspections.',
-      link: '/blog/revolutionizing-wind-farm-inspections'
+      title: 'Revolutionising Wind Farm Building',
+      summary: 'Learn how PrintWindAI is using robotics and AI to transform traditional wind tower construction.',
+      link: '/blog/revolutionising-wind-farm-inspections'
     }
   ];
 

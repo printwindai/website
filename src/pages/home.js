@@ -8,27 +8,27 @@ function Home() {
     {
       title: 'Tower Crawler',
       description: 'Discover how PrintWindAI is revolutionizing wind farm placement using a simple and sophisticated 3D printing crawler that can be deployed in all terrain',
-      image: '/images/project.jpg'
+      image: '/images/towercrawler.png'
     },
     {
       title: 'Lower Costs and Higher Efficiency',
       description: 'Our solution leads to a 30% reduction in cost and significantly increases the efficiency of Printing leading to rapid build times with lower cost.',
-      image: '/images/case-study.jpg'
+      image: '/images/turbine.jpeg'
     },
     {
       title: 'Our Goals',
       description: 'We aim to revolutionise the  Wind Turbine Industry with out innovative solutions allowing for rapid deployment and lower costs. The minimalist design allows for esier transportation and the possibility of accessing more inaccessible areas of high wind speed.',
-      image: '/images/goals.jpg'
+      image: '/images/OurGoals.jpeg'
     },
     {
       title: 'UK Net Zero Strategy',
       description: 'PrintWindAI is aligned with the UK’s 2050 Net-Zero strategy, contributing to national climate goals.',
-      image: '/images/uk-gov.jpg'
+      image: '/images/netzero.jpeg'
     },
     {
       title: 'AI Integrated Software',
       description: 'Our AI Software is integrated with the crawler setup and design, allowing for real-time data analysis and machine learning additionally the computer vision software allows live tracking of its surroundings',
-      image: '/images/international.jpg'
+      image: '/images/AIsection.png'
     }
   ];
 

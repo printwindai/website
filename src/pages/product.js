@@ -26,7 +26,7 @@ function Product() {
           <p>The Tower Crawler is a smart, simple robot construction that is capable of building large wind turbines on site. The crawler has a patented, sophisticated design that can build layer upon layer on itself in quick succession and waits only for the concrete curing time.</p>
         </div>
         <div className="product-image">
-          <img src="/images/tower-crawler.jpg" alt="Tower Crawler" />
+          <img src="/images/towercrawler.png" alt="Tower Crawler" />
         </div>
       </section>
 
@@ -45,7 +45,7 @@ function Product() {
           <p>Our crawler leverages AI to identify structural weaknesses, changing weather conditions, automate fault detection, and improve the decision-making process through machine learning models trained on thousands of inspection records.</p>
         </div>
         <div className="ai-image">
-          <img src="/images/ai-analysis.jpg" alt="AI Integration" />
+          <img src="/images/AIsection.png" alt="AI Integration" />
         </div>
       </section>
     </div>
