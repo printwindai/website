@@ -1,55 +1,133 @@
-// src/pages/home.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import '../App.css';
+
+const sections = [
+  {
+    label: 'Simplicity',
+    title: 'No noise. No setup. No pollution.',
+    body: 'Go anywhere. No fuel, no fumes, no generators to wrangle — just roll up and roll out. SolarRola delivers clean, silent power the moment you arrive.',
+    image: '/images/simplicity.jpeg',
+  },
+  {
+    label: 'Economics',
+    title: 'Lower cost than diesel — every single day.',
+    body: 'Diesel generators burn money with every litre. SolarRola eliminates fuel spend, delivery logistics, and maintenance overheads, undercutting comparative diesel running costs while producing zero emissions.',
+    image: '/images/OurGoals.jpeg',
+  },
+  {
+    label: 'Mission',
+    title: 'Reimagining portable off-grid energy storage',
+    body: "A minimalist design that takes us to new sites that previously could not manage remote power — bridging noise concerns and offsetting carbon emissions, wherever the work goes.",
+    image: '/images/netzero.jpeg',
+  },
+  {
+    label: 'AI Power',
+    title: 'Intelligent energy, tracked live',
+    body: 'SolarRola tracks energy usage in real time, monitors battery power draw, and delivers live power analytics straight from the product — so you always know exactly what you have and what you are using.',
+    image: '/images/AIsection.png',
+  },
+];
+
+const stats = [
+  { value: '<30s', label: 'Deploy time' },
+  { value: '0', label: 'Emissions on site' },
+  { value: 'Lower', label: 'Cost vs. diesel' },
+  { value: 'Live', label: 'AI power analytics' },
+];
 
 function Home() {
-  const sections = [
-    {
-      title: 'Tower Crawler',
-      description: 'Discover how PrintWindAI is revolutionizing wind farm placement using a simple and sophisticated 3D printing crawler that can be deployed in all terrain',
-      image: '/images/towercrawler.png'
-    },
-    {
-      title: 'Lower Costs and Higher Efficiency',
-      description: 'Our solution leads to a 30% reduction in cost and significantly increases the efficiency of Printing leading to rapid build times with lower cost.',
-      image: '/images/turbine.jpeg'
-    },
-    {
-      title: 'Our Goals',
-      description: 'We aim to revolutionise the  Wind Turbine Industry with out innovative solutions allowing for rapid deployment and lower costs. The minimalist design allows for esier transportation and the possibility of accessing more inaccessible areas of high wind speed.',
-      image: '/images/OurGoals.jpeg'
-    },
-    {
-      title: 'UK Net Zero Strategy',
-      description: 'PrintWindAI is aligned with the UK’s 2050 Net-Zero strategy, contributing to national climate goals.',
-      image: '/images/netzero.jpeg'
-    },
-    {
-      title: 'AI Integrated Software',
-      description: 'Our AI Software is integrated with the crawler setup and design, allowing for real-time data analysis and machine learning additionally the computer vision software allows live tracking of its surroundings',
-      image: '/images/AIsection.png'
-    }
-  ];
-
   return (
-    <div className="home-container">
+    <div className="page">
       <Navbar />
-      <div className="content-container">
-        {sections.map((section, index) => (
-          <section key={index} className={`info-section ${index % 2 === 0 ? 'bg-light' : 'bg-dark'}`}>
-            <div className="info-text">
-              <h2>{section.title}</h2>
-              <p>{section.description}</p>
+
+      {/* ── Hero ── */}
+      <section className="home-hero">
+        <div className="container">
+          <div className="home-hero__content">
+            <p className="pill fade-up">☀ Clean energy — deployed in seconds</p>
+            <h1 className="display fade-up fade-up-1">
+              SolarRola,<br /><em>rolled out anywhere.</em>
+            </h1>
+            <p className="body-lg fade-up fade-up-2" style={{ maxWidth: 520 }}>
+              SolarRola deploys clean power in under 30 seconds — replacing diesel generators on remote construction sites, off-grid infrastructure, and wind farm builds worldwide. No noise. No setup. No pollution.
+            </p>
+            <div className="home-hero__actions fade-up fade-up-3">
+              <Link to="/product" className="btn btn--primary">See the product →</Link>
+              <Link to="/contact" className="btn btn--outline">Talk to us</Link>
             </div>
-            <div className="info-image">
-              <img src={section.image} alt={section.title} />
-            </div>
-          </section>
-        ))}
+          </div>
+        </div>
+
+        {/* Hero image strip */}
+        <div className="home-hero__image">
+          <img src="/images/solarrola-hero.jpg" alt="SolarRola portable solar mat deployed on site" />
+          <div className="home-hero__image-overlay" />
+        </div>
+      </section>
+
+      {/* ── Stats bar ── */}
+      <div className="home-stats">
+        <div className="container">
+          <ul className="home-stats__list">
+            {stats.map((s) => (
+              <li key={s.label} className="home-stats__item">
+                <span className="home-stats__value">{s.value}</span>
+                <span className="home-stats__label">{s.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
+
+      {/* ── Feature sections ── */}
+      {sections.map((s, i) => (
+        <section key={i} className={`home-feature${i % 2 !== 0 ? ' home-feature--flip' : ''}`}>
+          <div className="container home-feature__grid">
+            <div className="home-feature__text">
+              <p className="label">{s.label}</p>
+              <h2 className="heading-xl" style={{ marginTop: 12 }}>{s.title}</h2>
+              <p className="body-lg" style={{ marginTop: 20 }}>{s.body}</p>
+            </div>
+            <div className="home-feature__image">
+              <img src={s.image} alt={s.title} />
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* ── CTA ── */}
+      <section className="home-cta">
+        <div className="container--narrow" style={{ textAlign: 'center' }}>
+          <h2 className="heading-xl">Ready to build the future?</h2>
+          <p className="body-lg" style={{ marginTop: 16 }}>
+            Get in touch with our team to discuss how SolarRola can power your next project.
+          </p>
+          <Link to="/contact" className="btn btn--primary" style={{ marginTop: 36 }}>
+            Contact sales →
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }
 
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container footer__inner">
+        <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.1rem', color: 'var(--slate-400)' }}>
+          PrintWind<span style={{ color: 'var(--accent)' }}>AI</span>
+        </span>
+        <p className="body-md" style={{ fontSize: '0.85rem' }}>
+          © {new Date().getFullYear()} PrintWindAI Ltd · <a href="mailto:support@printwindai.com" style={{ color: 'var(--accent)' }}>support@printwindai.com</a>
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+export { Footer };
 export default Home;

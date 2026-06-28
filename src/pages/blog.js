@@ -1,34 +1,57 @@
-// src/pages/Blog.js
 import React from 'react';
 import Navbar from '../components/Navbar';
-import '../App.css';
-import '../blog.css';
+import { Footer } from './home';
+
+const posts = [
+  {
+    title: 'How SolarRola changes the game for portable coffee vendors',
+    summary: 'Mobile baristas have always been tethered to noisy, fume-belching generators. SolarRola cuts the cord — silent, clean power that rolls out wherever the coffee goes.',
+    date: 'June 2026',
+    tag: 'Field Story',
+    link: '/blog/solarola-coffee-vendors',
+  },
+];
 
 function Blog() {
-  const blogPosts = [
-    {
-      title: 'Revolutionising Wind Farm Building',
-      summary: 'Learn how PrintWindAI is using robotics and AI to transform traditional wind tower construction.',
-      link: '/blog/revolutionising-wind-farm-inspections'
-    }
-  ];
-
   return (
-    <div className="blog-page">
+    <div className="page">
       <Navbar />
-      <div className="blog-header">
-        <h1>PrintWindAI Blog</h1>
-        <p>Insights, updates, and technology news from our team.</p>
-      </div>
-      <div className="blog-list">
-        {blogPosts.map((post, index) => (
-          <div className="blog-card" key={index}>
-            <h2>{post.title}</h2>
-            <p>{post.summary}</p>
-            <a href={post.link} className="read-more">Read More →</a>
-          </div>
-        ))}
-      </div>
+
+      <section className="section blog-header">
+        <div className="container--narrow">
+          <p className="label fade-up">Latest thinking</p>
+          <h1 className="display fade-up fade-up-1" style={{ marginTop: 12 }}>
+            From the <em>blog</em>
+          </h1>
+          <p className="body-lg fade-up fade-up-2" style={{ marginTop: 20 }}>
+            Insights, updates, and technology news from the PrintWindAI team.
+          </p>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      <section className="section">
+        <div className="container">
+          <ul className="blog-list">
+            {posts.map((p, i) => (
+              <li key={i}>
+                <a href={p.link} className="blog-card">
+                  <div className="blog-card__meta">
+                    <span className="pill">{p.tag}</span>
+                    <span className="blog-card__date">{p.date}</span>
+                  </div>
+                  <h2 className="heading-lg" style={{ marginTop: 16 }}>{p.title}</h2>
+                  <p className="body-lg" style={{ marginTop: 12 }}>{p.summary}</p>
+                  <span className="blog-card__cta">Read article →</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }

@@ -1,14 +1,13 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import './index.css';
+import './App.css';
+import './product.css';
+import './about.css';
+import './blog.css';
+import './careers.css';
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <Outlet />
-    </div>
-  );
+  return null;
 }
 
 export default App;
