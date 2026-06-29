@@ -200,7 +200,7 @@ function Product() {
               Clean power anywhere — no diesel, no infrastructure, no delay.
             </p>
             <ul className="solarroll-bullets fade-up fade-up-3">
-              <li>Rolls to the size of a yoga mat</li>
+            
               <li>Deployed in under 30 seconds — every model</li>
               <li>Replaces diesel generators on remote sites</li>
               <li>No noise, no setup, no pollution — just roll out</li>
